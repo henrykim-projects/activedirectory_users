@@ -27,84 +27,23 @@ a. In the Domain Controller virtual machine, open PowerShell ISE and run the [sc
 <img src="https://github.com/henrykim-projects/activedirectory_users/blob/fcb97f27b5d67bdf8609bf550ba8bbd1529a2587/images/ug_1.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
 <br/> 
 <br/>
-b. Post-deployment configuration: <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/7d2b6b00db83259673f2465f2696081894db7a65/images/nc_8.PNG" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+b.Confirm the new users are present in orgainizational unit we made earlier:<br/>
+<img src="https://github.com/henrykim-projects/activedirectory_users/blob/21f23db221ff455ae30f7733b5d632f9c2801afc/images/ug_3.PNG" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 <br />  
 <br />
-c. Creating the main domain forest:  <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/7d2b6b00db83259673f2465f2696081894db7a65/images/nc_9.PNG" height="40%" width="40%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-d. After successfully completeing configuration, the domain name and admin account will be visible:  <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/7d2b6b00db83259673f2465f2696081894db7a65/images/nc_11.PNG" height="40%" width="40%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-e. With AD Users and Computers, create a organizational unit for admin accounts: <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/25b2e12ea93c1007e18c14c32d4346ab17dfd628/images/nc_13.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+
+__2. Confirm Network Connectivity in Client Computer__ <br/>
+<br/>
+a. Configure a second virtual machine that will act as the client computer and log in using one of the generated user accounts: <br/>
+<img src="https://github.com/henrykim-projects/activedirectory_users/blob/21f23db221ff455ae30f7733b5d632f9c2801afc/images/ug_4.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
 <br/> 
 <br/>
-f. Create admin account. Password expiration and change password settings add layers of account management: <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/25b2e12ea93c1007e18c14c32d4346ab17dfd628/images/nc_15.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/25b2e12ea93c1007e18c14c32d4346ab17dfd628/images/nc_16.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-The account is now in both Users and Admins groups
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/c6a8cd48df4631062bc775b02b18d89e1df486c4/images/nc_18.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br />
-<br/>
-__2. Adding Routing and Remote Access__ <br/>
-<br/>
-a. In "Add Server Roles", select Remote Access: <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/fb1fd1b9678440ccd11c9a9ef883e3d27979df78/images/nc_19.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-b. We will configure NAT to connect users to the internet through one IP address, the Domain Controller: <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/fb1fd1b9678440ccd11c9a9ef883e3d27979df78/images/nc_20.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/fb1fd1b9678440ccd11c9a9ef883e3d27979df78/images/nc_21.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-c. Select the Internet connection we labelled from the setup portion of the project (not the internal network)
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/07da8f3778af75e098ea64190f55abed46404224/images/nc_22.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-d. The Domain Controller will have a green indicator to confirm network connectivity
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/07da8f3778af75e098ea64190f55abed46404224/images/nc_22.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-__3. DHCP Server Configuration__ <br/>
-<br/>
-a. Add DHCP in server roles for remote server adiministration: <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/07da8f3778af75e098ea64190f55abed46404224/images/nc_24.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-b. Manually configure the scope, the range of IP addresses, available as well as the subnet mask : <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/07da8f3778af75e098ea64190f55abed46404224/images/nc_25.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/07da8f3778af75e098ea64190f55abed46404224/images/nc_26.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-c. It is possible to set the duration for distributed IP addresses. This is commonly seen in cafes, where Wi-Fi access is limited to a couple hours, and additional purchase is necessaru for reconnection: <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/07da8f3778af75e098ea64190f55abed46404224/images/nc_27.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-d. Set the default gateway, as well as the DNS server, to the Domain Controller's IP address: <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/07da8f3778af75e098ea64190f55abed46404224/images/nc_28.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/07da8f3778af75e098ea64190f55abed46404224/images/nc_29.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
-<br/> 
-<br/>
-e. Now the network is ready to provide IP addresses within a scope for new users. Current leases, policies, and other management tools are available to facilitate user access: <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/07da8f3778af75e098ea64190f55abed46404224/images/nc_30.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+b. As we open Windows Command terminal and run ipconfig, we can see that the information matches our manual configuration: The DNS is coming from mydomain.com, as well as the default gateway. The IP address of the user's computer is 172.16.0.100, the very first of the scope we set earlier: <br/>
+<img src="https://github.com/henrykim-projects/activedirectory_users/blob/21f23db221ff455ae30f7733b5d632f9c2801afc/images/ug_2.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
 <br/> 
 <br/>
 </p>
 
 <h2>Final Thoughts</h2>
-Now that DHCP/DNS, Remote Access, and Domain Services are fully configured, we are ready to add users to our network. Active Directory demonstrated many features that give granular control to how and to whom internet is provided. We also saw modes of access management and identity security in the form of organizational units, admin account controls, and IP lease durations. In the final step, we will add users generated through a Powershell script and confirm network connectivity through a DHCP-provided IP address. 
+In this portion, we created user accounts, logged in with one of them, and confirmed that our internal network is up and running. This project was a comprehensive review of Active Directory as well as essential concepts in the A+ exam. 
 <br><br/>
