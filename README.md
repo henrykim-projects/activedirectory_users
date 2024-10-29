@@ -21,10 +21,10 @@ This project involves creating an internal network with virtual machines. DHCP, 
 
 <h2>Configuration Steps:</h2>
 
-__1. Adding AD Domain Services and Post Deployment Configuration__ <br/>
+__1. User Generation with Powershell Script__ <br/>
 <br/>
-a. Next we will be adding AD Domain Services, this serves as the database to manage users and permissions with: <br/>
-<img src="https://github.com/henrykim-projects/activedirectory_config/blob/888ec3e102923dc668412a4d4668d7b0429c636f/images/nc_6.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
+a. In the Domain Controller virtual machine, open PowerShell ISE and run the script to generate a mass of user accounts. This will simulate the number of users in a enterprise environment: <br/>
+<img src="https://github.com/henrykim-projects/activedirectory_users/blob/fcb97f27b5d67bdf8609bf550ba8bbd1529a2587/images/ug_1.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
 <br/> 
 <br/>
 b. Post-deployment configuration: <br/>
