@@ -23,7 +23,7 @@ This project involves creating an internal network with virtual machines. DHCP, 
 
 __1. User Generation with Powershell Script__ <br/>
 <br/>
-a. In the Domain Controller virtual machine, open PowerShell ISE and run the script to generate a mass of user accounts. This will simulate the number of users in a enterprise environment: <br/>
+a. In the Domain Controller virtual machine, open PowerShell ISE and run the [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) to generate a mass of user accounts. This will simulate the number of users in a enterprise environment: <br/>
 <img src="https://github.com/henrykim-projects/activedirectory_users/blob/fcb97f27b5d67bdf8609bf550ba8bbd1529a2587/images/ug_1.PNG" height="50%" width="50%" alt="Disk Sanitization Steps"/>
 <br/> 
 <br/>
